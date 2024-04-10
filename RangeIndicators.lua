@@ -44,14 +44,14 @@ function Addon:ADDON_LOADED(event, addonName)
 end
 
 local action_bars = {
-	"ActionButton", -- Action Bar 1
-	"MultiBarBottomLeftButton", -- Action Bar 2
-	"MultiBarBottomRightButton", -- Action Bar 3
-	"MultiBarRightButton", -- Action Bar 4
-	"MultiBarLeftButton", -- Action Bar 5
-	"MultiBar5Button", -- Action Bar 6
-	"MultiBar6Button", -- Action Bar 7
-	"MultiBar7Button" -- Action Bar 8
+	"Action", -- Action Bar 1
+	"MultiBarBottomLeft", -- Action Bar 2
+	"MultiBarBottomRight", -- Action Bar 3
+	"MultiBarRight", -- Action Bar 4
+	"MultiBarLeft", -- Action Bar 5
+	"MultiBar5", -- Action Bar 6
+	"MultiBar6", -- Action Bar 7
+	"MultiBar7" -- Action Bar 8
 }
 
 local function HideHotkeys()
@@ -59,7 +59,7 @@ local function HideHotkeys()
 		local color = Addon.sets["HIDDEN"]
 
 		for _, action_bar in pairs(action_bars) do
-			local hotkey = _G[action_bar .. i .. "HotKey"]
+			local hotkey = _G[action_bar .. "Button" .. i .. "HotKey"]
 
 			hotkey:SetVertexColor(color[1], color[2], color[3])
 			hotkey:SetText(RANGE_INDICATOR)
